@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hido Alves - Advocacia Imobiliária</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cinzel for Display/Headings, Montserrat for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            300: '#E6C88B',
+                            400: '#D4AF37', // Primary Gold
+                            500: '#CBA660',
+                            600: '#B59554',
+                        },
+                        dark: {
+                            900: '#07090C', // Deep background
+                            800: '#0D1117', // Elevate surface
+                            700: '#161B22',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        // Blend deep dark into a subtle architectural reference image
+                        'hero-pattern': "linear-gradient(to right, rgba(7, 9, 12, 0.95), rgba(7, 9, 12, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
+                        'texture-pattern': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23d4af37\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #07090C;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #E6C88B 0%, #D4AF37 50%, #B59554 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-nav {
+            background: rgba(7, 9, 12, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .premium-border {
+            position: relative;
+        }
+
+        .premium-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(212, 175, 55, 0.4), rgba(212, 175, 55, 0.05));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            background: #0D1117;
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.08);
+        }
+
+        .card-hover:hover .icon-gold {
+            transform: scale(1.1);
+            color: #E6C88B;
+        }
+
+        /* Subtle revealing animations */
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-gold-500 selection:text-dark-900 bg-texture-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img src="assets/logo.png" alt="Logo"
+                        class="h-16 w-auto object-contain transform group-hover:scale-105 transition duration-500">
+                </a>
+
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="#inicio"
+                        class="text-gray-300 hover:text-gold-400 transition text-xs tracking-[0.15em] uppercase font-medium">Início</a>
+                    <a href="#sobre"
+                        class="text-gray-300 hover:text-gold-400 transition text-xs tracking-[0.15em] uppercase font-medium">O
+                        Escritório</a>
+                    <a href="#atuacao"
+                        class="text-gray-300 hover:text-gold-400 transition text-xs tracking-[0.15em] uppercase font-medium">Atuação</a>
+                    <a href="#contato"
+                        class="text-gray-300 hover:text-gold-400 transition text-xs tracking-[0.15em] uppercase font-medium">Contato</a>
+
+                    <a href="https://wa.me/5571984891327" target="_blank"
+                        class="premium-border bg-gold-400/10 hover:bg-gold-400/20 text-gold-400 px-7 py-3 rounded-sm text-xs tracking-[0.1em] uppercase font-semibold transition duration-300 flex items-center gap-2">
+                        <span>Fale Conosco</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gold-400 p-2" id="mobile-menu-btn">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio"
+        class="relative min-h-screen flex items-end pt-28 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-end pb-0">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column (Text) -->
+                <div class="max-w-3xl">
+                    <div
+                        class="inline-flex items-center gap-3 px-4 py-2 border border-gold-400/30 rounded-full bg-dark-900/50 backdrop-blur-sm mb-8 fade-in-up">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span class="text-gold-300 text-xs tracking-[0.2em] uppercase font-medium">Atuação em Todo o
+                            Brasil</span>
+                    </div>
+
+                    <h1
+                        class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 fade-in-up delay-100">
+                        Advocacia<br />
+                        <span
+                            class="text-gradient italic font-normal text-6xl md:text-7xl lg:text-8xl pr-4">Imobiliária</span><br />
+                        de Excelência
+                    </h1>
+
+                    <p
+                        class="text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10 fade-in-up delay-200">
+                        Especializados em casos de elevada complexidade com teses jurídicas inovadoras. Defendendo seu
+                        patrimônio com o mais alto rigor técnico e estratégico.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-5 fade-in-up delay-300 mb-6">
+                        <a href="#contato"
+                            class="bg-gold-400 hover:bg-gold-500 text-dark-900 px-8 py-4 rounded-sm text-sm tracking-[0.1em] uppercase font-bold transition duration-300 flex items-center justify-center gap-3">
+                            Agendar Consulta
+                            <span class="material-symbols-outlined">arrow_right_alt</span>
+                        </a>
+                        <a href="#distratos"
+                            class="premium-border bg-dark-800/50 backdrop-blur-md hover:bg-dark-800 text-white px-8 py-4 rounded-sm text-sm tracking-[0.1em] uppercase font-medium transition duration-300 flex items-center justify-center">
+                            Conhecer Especialidades
+                        </a>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-3 text-gold-400/80 fade-in-up delay-300 text-sm font-medium mb-12 lg:mb-24">
+                        <span class="material-symbols-outlined">headset_mic</span>
+                        <span>Atendimento online e presencial.</span>
+                    </div>
+                </div>
+
+                <!-- Right Column (Image and Logo) -->
+                <div class="hidden lg:flex relative justify-center items-end h-full self-end fade-in-up delay-200">
+                    <!-- Giant Watermark Logo -->
+                    <img src="assets/logo.png" alt="Marca D'água"
+                        class="absolute inset-0 w-full h-[80%] object-contain opacity-10 blur-[2px] transform scale-125 z-0 mb-12" />
+
+                    <!-- Profile Picture -->
+                    <img src="assets/perfil.png" alt="Hido Alves"
+                        class="relative z-10 w-auto h-auto min-h-[550px] max-h-[750px] object-cover object-bottom drop-shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
+
+                    <!-- Base gradient so portrait doesn't cut off sharply -->
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#07090C] to-transparent z-20 pointer-events-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elegant Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-gold-400 text-[10px] tracking-[0.2em] uppercase">Rolar para descobrir</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-gold-400 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Institutional / About -->
+    <section id="sobre" class="py-24 md:py-32 relative">
+        <div class="absolute top-0 right-0 w-1/3 h-[80%] bg-gold-400/5 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                <div class="relative">
+                    <div class="premium-border p-2 rounded-sm bg-dark-800/50">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop"
+                            alt="Escritório de Advocacia"
+                            class="w-full h-auto object-cover rounded-sm grayscale-[30%] contrast-125 hover:grayscale-0 transition duration-700" />
+                    </div>
+                    <!-- Decorative element overflow -->
+                    <div
+                        class="absolute -bottom-8 -right-8 w-48 h-48 border border-gold-400/20 -z-10 bg-texture-pattern">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[1px] w-12 bg-gold-400"></div>
+                        <span class="text-gold-400 text-xs tracking-[0.2em] uppercase font-medium">O Escritório</span>
+                    </div>
+
+                    <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+                        Enfrentando <span class="text-gradient italic font-normal">Desafios Inéditos</span> no Direito
+                        Imobiliário
+                    </h2>
+
+                    <div class="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
+                        <p>
+                            Com uma atuação abrangente em todo o Brasil, nosso escritório é especializado em diversas
+                            questões no Direito Imobiliário. Destacamo-nos ao lidar com casos de elevada complexidade,
+                            que envolvem pouca jurisprudência.
+                        </p>
+                        <p>
+                            Acreditamos no poder dos novos conhecimentos, acompanhando de perto a evolução e as
+                            inovações na prática jurídica, contribuindo ativamente para o desenvolvimento de novas
+                            teses.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 mt-12 pt-12 border-t border-white/5">
+                        <div>
+                            <p class="font-display text-4xl text-gold-400 mb-2">Nacional</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Abertura de Atuação</p>
+                        </div>
+                        <div>
+                            <p class="font-display text-4xl text-gold-400 mb-2">Inovação</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Teses Jurídicas</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section: Distratos -->
+    <section id="distratos" class="py-24 bg-dark-800 relative z-20">
+        <!-- Top and bottom borders for distinction -->
+        <div
+            class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="premium-border bg-dark-900/80 p-10 md:p-16 rounded-sm text-center max-w-4xl mx-auto relative overflow-hidden group">
+                <!-- Abstract background glow in the card -->
+                <div class="absolute inset-0 bg-gold-400/5 group-hover:bg-gold-400/10 transition duration-700"></div>
+
+                <span
+                    class="relative z-10 material-symbols-outlined text-gold-400 text-5xl mb-6">workspace_premium</span>
+
+                <h3 class="relative z-10 font-display text-2xl md:text-4xl text-white font-bold mb-6">
+                    Referência nas Causas que Envolvem <br /> <span class="text-gradient italic font-normal">Distratos
+                        Imobiliários</span>
+                </h3>
+
+                <p class="relative z-10 text-gray-300 leading-relaxed font-light mb-8 max-w-2xl mx-auto">
+                    Temos uma equipe de referência em pedidos de distrato imobiliário, especializada em identificar
+                    cláusulas abusivas ou ilegais nos contratos. Atuamos na defesa da lei e jurisprudências que
+                    reconhecem o direito à <strong>restituição de até 90% do valor investido</strong> pelos compradores.
+                </p>
+                <p class="relative z-10 text-gold-400/80 text-sm tracking-wide font-medium">
+                    Nosso compromisso é oferecer representação legal eficaz para garantir a compensação justa a que você
+                    tem direito.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Grid -->
+    <section id="atuacao" class="py-24 md:py-32 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16 md:mb-24">
+                <span class="text-gold-400 text-xs tracking-[0.2em] uppercase font-medium">Nossas Especialidades</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-4">
+                    Áreas de <span class="italic text-gradient font-normal">Atuação</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">domain</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Distrato de Cota Imobiliária</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Rescisão contratual estratégica, visando
+                        a recuperação máxima dos valores investidos em cotas ou multipropriedades.</p>
+                </div>
+
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">gavel</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Ações Judiciais Imobiliárias</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Representação enérgica em litígios
+                        complexos, protegendo integralmente seus interesses patrimoniais nos tribunais.</p>
+                </div>
+
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">real_estate_agent</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Alienação Fiduciária</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Defesa especializada em contratos de
+                        alienação fiduciária, atuando tanto na prevenção quanto no contencioso.</p>
+                </div>
+
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">assignment</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Contratos Imobiliários</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Elaboração, análise e revisão minuciosa
+                        de instrumentos contratuais para assegurar solidez e segurança aos negócios.</p>
+                </div>
+
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">balance</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Leilão Judicial de Imóveis</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Assessoria jurídica completa para
+                        arrematantes, garantindo aquisições seguras e mitigações de surpresas processuais.</p>
+                </div>
+
+                <!-- Area -->
+                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                    <span
+                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">account_balance</span>
+                    <h4 class="font-display text-xl text-white font-bold mb-3">Usucapião</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">Processos judiciais e extrajudiciais
+                        para o reconhecimento e declaração formal da propriedade através da posse contínua.</p>
+                </div>
+
+                <!-- Area (Full Width modifier for Due Diligence) -->
+                <div
+                    class="md:col-span-2 lg:col-span-3 premium-border bg-[#0a0d11] p-8 md:p-10 rounded-sm card-hover border-gold-400/20 text-center flex flex-col items-center justify-center">
+                    <span class="text-gold-400 text-xs tracking-[0.2em] font-medium uppercase mb-3">Advocacia Preventiva
+                        Registral</span>
+                    <h4 class="font-display text-2xl md:text-3xl text-white font-bold mb-4">Due Diligence Urbana &
+                        Demais Especialidades</h4>
+                    <p class="text-gray-400 text-sm md:text-base font-light mb-6 max-w-3xl">
+                        Também atuamos eximiamente com <strong>Direito Condominial</strong>, <strong>Direito
+                            Sucessório</strong>, <strong>Atraso de Obra</strong>, <strong>Ações Possessórias</strong> e
+                        verificação rigorosa de riscos em negociações multimilionárias.
+                    </p>
+                    <a href="#contato"
+                        class="text-gold-400 hover:text-white transition font-semibold text-sm tracking-wider uppercase border-b border-gold-400 pb-1">Converse
+                        com nossos especialistas</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Footer Sections -->
+    <section id="contato" class="relative bg-dark-800 py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">Envie-nos sua</h2>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-gradient italic font-normal mb-8">Dúvida
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed font-light mb-12">
+                        O primeiro passo para a resolução do seu desafio imobiliário é uma análise técnica minuciosa.
+                        Entre em contato conosco para agendarmos um atendimento e delinearmos a melhor estratégia para o
+                        seu caso.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5">
+                            <span class="material-symbols-outlined text-gold-400 mt-1">call</span>
+                            <div>
+                                <h5 class="text-white font-display font-medium text-lg uppercase tracking-wider mb-1">
+                                    Contato Direto</h5>
+                                <p class="text-gray-400 text-xl">(71) 98489-1327</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5">
+                            <span class="material-symbols-outlined text-gold-400 mt-1">mail</span>
+                            <div>
+                                <h5 class="text-white font-display font-medium text-lg uppercase tracking-wider mb-1">
+                                    Email</h5>
+                                <p class="text-gray-400">atendimento@hidoalves.com.br</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5">
+                            <span class="material-symbols-outlined text-gold-400 mt-1">schedule</span>
+                            <div>
+                                <h5 class="text-white font-display font-medium text-lg uppercase tracking-wider mb-1">
+                                    Horário de Atendimento</h5>
+                                <p class="text-gray-400">Seg - Sex: 8:00h - 12:00h | 14:00h - 17:00h</p>
+                                <p class="text-gray-500 text-sm mt-1">Sáb – Dom: Fechado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="premium-border bg-dark-900 p-8 md:p-10 rounded-sm">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
+                                for="name">Nome Completo</label>
+                            <input type="text" id="name"
+                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                placeholder="Seu nome" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
+                                    for="email">E-mail</label>
+                                <input type="email" id="email"
+                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                    placeholder="seu@email.com" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
+                                    for="phone">Telefone / WhatsApp</label>
+                                <input type="tel" id="phone"
+                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                    placeholder="(71) 00000-0000" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
+                                for="message">Mensagem / Sua Dúvida</label>
+                            <textarea id="message" rows="4"
+                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light resize-none"
+                                placeholder="Descreva brevemente o seu caso para análise prévia..."></textarea>
+                        </div>
+                        <button type="button"
+                            class="w-full bg-gold-400 hover:bg-gold-500 text-dark-900 font-bold py-4 rounded-sm text-sm uppercase tracking-[0.1em] transition duration-300 mt-4">
+                            Solicitar Análise
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#040608] pt-16 pb-8 border-t border-gold-400/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex flex-col mb-8 md:mb-0">
+                    <span
+                        class="font-display font-bold text-2xl tracking-[0.2em] text-white uppercase leading-none">Hido
+                        Alves</span>
+                    <span class="text-gold-400 text-[0.65rem] tracking-[0.3em] font-medium uppercase mt-2">Advocacia
+                        Imobiliária</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/hidoalvesadv/" target="_blank"
+                        class="text-gray-500 hover:text-gold-400 transition" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-light">
+                <p>2024 &copy; Hido Alves Advocacia. Todos os direitos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0 uppercase tracking-widest text-[10px]">
+                    <a href="#" class="hover:text-gold-400 transition">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-gold-400 transition">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        // Navbar Scrolled Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-dark-900/95');
+                navbar.classList.remove('glass-nav');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-dark-900/95');
+                navbar.classList.add('glass-nav');
+            }
+        });
+
+        // Simple Mobile Menu Toggle
+        /* Add mobile menu implementation if needed, hidden for now since the header buttons are enough for desktop mapping. */
+    </script>
+</body>
+
+</html>
