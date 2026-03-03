@@ -57,7 +57,7 @@
                     backgroundImage: {
                         // Blend deep dark into a subtle architectural reference image
                         'hero-pattern': "linear-gradient(to right, rgba(7, 9, 12, 0.95), rgba(7, 9, 12, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
-                        'texture-pattern': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23d4af37\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')",
+                        'texture-pattern': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23d4af37\" fill-opacity=\"0.02\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3Ccircle cx=\"13\" cy=\"13\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')",
                     }
                 }
             }
@@ -261,11 +261,12 @@
 
     <!-- Hero Section -->
     <section id="inicio"
-        class="relative min-h-screen flex items-end pt-28 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-end pb-0">
+        class="relative min-h-screen flex items-center lg:items-end pt-20 lg:pt-28 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-center lg:justify-end pb-12 lg:pb-0">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
                 <!-- Left Column (Text) -->
-                <div class="max-w-3xl pt-10 pb-8 lg:pb-0">
+                <div class="max-w-3xl pt-4 lg:pt-10 pb-8 lg:pb-0">
                     <div
                         class="inline-flex items-center gap-3 px-4 py-2 border border-gold-400/30 rounded-full bg-dark-900/50 backdrop-blur-sm mb-8 fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
@@ -284,7 +285,7 @@
                     </h1>
 
                     <p
-                        class="text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10 fade-in-up delay-200">
+                        class="text-justify text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-10 fade-in-up delay-200">
                         Especializados em casos de elevada complexidade com teses jurídicas inovadoras. Defendendo seu
                         patrimônio com o mais alto rigor técnico e estratégico.
                     </p>
@@ -310,14 +311,14 @@
 
                 <!-- Right Column (Image and Logo) -->
                 <div
-                    class="relative flex justify-center items-end h-[400px] sm:h-[500px] lg:h-full self-end fade-in-up delay-200 z-10 w-full">
+                    class="relative hidden md:flex justify-center items-end h-[400px] sm:h-[500px] lg:h-full self-end fade-in-up delay-200 z-10 w-full">
                     <!-- Giant Watermark Logo -->
                     <img src="assets/logo.png" alt="Marca D'água"
                         class="absolute inset-0 w-full h-[60%] object-contain opacity-10 blur-[2px] transform scale-125 z-0 mb-8 sm:mb-16 hidden sm:block" />
 
                     <!-- Profile Picture -->
                     <img src="assets/perfil.png" alt="Hido Alves"
-                        class="relative z-10 w-auto h-full lg:min-h-[650px] lg:max-h-[850px] object-cover object-bottom drop-shadow-[0_0_30px_rgba(212,175,55,0.15)] opacity-90 lg:opacity-100" />
+                        class="relative z-10 w-auto h-full md:min-h-[650px] md:max-h-[850px] object-cover object-bottom drop-shadow-[0_0_30px_rgba(212,175,55,0.15)] opacity-90 lg:opacity-100 hidden md:block" />
                 </div>
             </div>
         </div>
@@ -348,8 +349,7 @@
                             class="w-full h-auto object-cover rounded-sm grayscale-[30%] contrast-125 hover:grayscale-0 transition duration-700" />
                     </div>
                     <!-- Decorative element overflow -->
-                    <div
-                        class="absolute -bottom-8 -right-8 w-48 h-48 border border-gold-400/20 -z-10 bg-texture-pattern">
+                    <div class="absolute -bottom-8 -right-8 w-48 h-48 border border-gold-400/20 -z-10">
                     </div>
                 </div>
 
@@ -364,7 +364,7 @@
                         <span class="text-gradient text-3xl md:text-5xl font-normal">Direito Imobiliário</span>
                     </h2>
 
-                    <div class="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
+                    <div class="text-justify space-y-6 text-gray-300 font-light leading-relaxed text-lg">
                         <p>
                             Com uma atuação abrangente em todo o Brasil, nosso escritório é especializado em diversas
                             questões no Direito Imobiliário. Destacamo-nos ao lidar com casos de elevada complexidade,
@@ -380,7 +380,7 @@
                     <div class="grid grid-cols-2 gap-8 mt-12 pt-12 border-t border-white/5">
                         <div>
                             <p class="font-display text-4xl text-gold-400 mb-2">Nacional</p>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest">Abertura de Atuação</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Cobertura de Atuação</p>
                         </div>
                         <div>
                             <p class="font-display text-4xl text-gold-400 mb-2">Inovação</p>
@@ -390,6 +390,10 @@
                 </div>
 
             </div>
+        </div>
+        <!-- Base gradient so portrait doesn't cut off sharply -->
+        <div
+            class="absolute bottom-0 left-0 w-full h-32 lg:h-32 bg-gradient-to-t from-[#07090C] via-[#07090C]/60 to-transparent z-20 pointer-events-none">
         </div>
     </section>
 
@@ -455,7 +459,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">domain</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Distrato de Cota Imobiliária</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Rescisão contratual estratégica, visando
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Rescisão contratual
+                        estratégica, visando
                         a recuperação máxima dos valores investidos em cotas ou multipropriedades.</p>
                 </div>
 
@@ -464,7 +469,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">landscape</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Distrato de Lotes</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Cancelamento do contrato de compra e
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Cancelamento do contrato de
+                        compra e
                         venda com a loteadora, assegurando a recuperação justa das parcelas pagas e protegendo seu
                         investimento.</p>
                 </div>
@@ -474,7 +480,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">gavel</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Ações Judiciais Imobiliárias</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Representação enérgica em litígios
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Representação enérgica em
+                        litígios
                         complexos, protegendo integralmente seus interesses patrimoniais nos tribunais.</p>
                 </div>
 
@@ -483,7 +490,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">real_estate_agent</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Alienação Fiduciária</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Defesa especializada em contratos de
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Defesa especializada em
+                        contratos de
                         alienação fiduciária, atuando tanto na prevenção quanto no contencioso.</p>
                 </div>
 
@@ -492,7 +500,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">assignment</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Contratos Imobiliários</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Elaboração, análise e revisão minuciosa
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Elaboração, análise e
+                        revisão minuciosa
                         de instrumentos contratuais para assegurar solidez e segurança aos negócios.</p>
                 </div>
 
@@ -501,7 +510,8 @@
                     <span
                         class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">balance</span>
                     <h4 class="font-display text-xl text-white font-bold mb-3">Leilão Judicial de Imóveis</h4>
-                    <p class="text-gray-400 text-sm font-light leading-relaxed">Assessoria jurídica completa para
+                    <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Assessoria jurídica
+                        completa para
                         arrematantes, garantindo aquisições seguras e mitigações de surpresas processuais.</p>
                 </div>
 
@@ -515,9 +525,9 @@
                         Também atuamos eximiamente com <strong>Usucapião</strong>, <strong>Direito Condominial</strong>,
                         <strong>Direito
                             Sucessório</strong>, <strong>Atraso de Obra</strong>, <strong>Ações Possessórias</strong> e
-                        verificação rigorosa de riscos em negociações multimilionárias.
+                        verificação rigorosa de riscos em Negócios Imobiliários.
                     </p>
-                    <a href="#contato"
+                    <a href="https://wa.me/5571984891327" target="_blank"
                         class="text-gold-400 hover:text-white transition font-semibold text-sm tracking-wider uppercase border-b border-gold-400 pb-1">Converse
                         com nossos especialistas</a>
                 </div>
@@ -540,10 +550,10 @@
 
                 <!-- Contact Info -->
                 <div>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">Envie-nos sua</h2>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">Nos envie sua</h2>
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-gradient italic font-normal mb-8">Dúvida
                     </h2>
-                    <p class="text-gray-400 leading-relaxed font-light mb-12">
+                    <p class="text-gray-400 text-justify leading-relaxed font-light mb-12">
                         O primeiro passo para a resolução do seu desafio imobiliário é uma análise técnica minuciosa.
                         Entre em contato conosco para agendarmos um atendimento e delinearmos a melhor estratégia para o
                         seu caso.
@@ -587,7 +597,7 @@
                             <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
                                 for="name">Nome Completo</label>
                             <input type="text" id="name"
-                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-2 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
                                 placeholder="Seu nome" required>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -595,14 +605,14 @@
                                 <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
                                     for="email">E-mail</label>
                                 <input type="email" id="email"
-                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-2 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
                                     placeholder="seu@email.com" required>
                             </div>
                             <div>
                                 <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
                                     for="phone">Telefone / WhatsApp</label>
                                 <input type="tel" id="phone"
-                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
+                                    class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-2 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light"
                                     placeholder="(71) 00000-0000" required>
                             </div>
                         </div>
@@ -610,7 +620,7 @@
                             <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
                                 for="message">Mensagem / Sua Dúvida</label>
                             <textarea id="message" rows="4"
-                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-0 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light resize-none"
+                                class="w-full bg-dark-800 border-b border-gray-700 focus:border-gold-400 px-2 py-3 text-white outline-none transition duration-300 placeholder-gray-600 rounded-none font-light resize-none"
                                 placeholder="Descreva brevemente o seu caso para análise prévia..."></textarea>
                         </div>
                         <button type="button" id="form-submit-btn"
@@ -628,14 +638,18 @@
     <footer class="bg-[#040608] pt-16 pb-8 border-t border-gold-400/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
-                <div class="flex flex-col mb-8 md:mb-0">
-                    <span
-                        class="font-display font-bold text-2xl tracking-[0.2em] text-white uppercase leading-none">Hido
-                        Alves</span>
-                    <span class="text-gold-400 text-[0.65rem] tracking-[0.3em] font-medium uppercase mt-2">Advocacia
-                        Imobiliária</span>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-2 mb-8 md:mb-0">
+                    <img src="./assets/logo2.png" alt="Logo" class="w-9 md:w-9 h-auto">
+                    <div class="flex flex-col items-center md:items-center text-center md:text-left">
+                        <span
+                            class="font-display font-bold text-2xl tracking-[0.2em] text-white uppercase leading-none">Hido
+                            Alves</span>
+                        <span
+                            class="text-gold-400 text-[0.65rem] tracking-[0.3em] font-medium uppercase mt-2 md:mt-1">Advocacia
+                            Imobiliária</span>
+                    </div>
                 </div>
-                <div class="flex gap-6">
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-0">
                     <a href="https://www.instagram.com/hidoalvesadv/" target="_blank"
                         class="text-gray-500 hover:text-gold-400 transition" aria-label="Instagram">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -643,17 +657,26 @@
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
+                    <a href="https://www.facebook.com/profile.php?id=61555599094795" target="_blank"
+                        class="text-gray-500 hover:text-gold-400 transition" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hido-alves-121b54135/" target="_blank"
+                        class="text-gray-500 hover:text-gold-400 transition" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
 
             <div
-                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-light">
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-center items-center text-xs text-gray-600 font-light">
                 <p><span id="copyright-year">2026</span> &copy; Hido Alves Advocacia. Todos os direitos reservados.</p>
-                <div class="flex gap-4 mt-4 md:mt-0 uppercase tracking-widest text-[10px]">
-                    <a href="#" class="hover:text-gold-400 transition">Política de Privacidade</a>
-                    <span>|</span>
-                    <a href="#" class="hover:text-gold-400 transition">Termos de Uso</a>
-                </div>
             </div>
         </div>
     </footer>
