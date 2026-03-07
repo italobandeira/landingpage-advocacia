@@ -187,6 +187,13 @@
         .btn-active:active {
             transform: scale(0.98);
         }
+
+        /* Utility: prevent text overflow in cards */
+        .word-break-safe {
+            overflow-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+        }
     </style>
 </head>
 
@@ -268,7 +275,7 @@
                 <!-- Left Column (Text) -->
                 <div class="max-w-3xl pt-4 lg:pt-10 pb-8 lg:pb-0">
                     <div
-                        class="inline-flex items-center gap-3 px-4 py-2 border border-gold-400/30 rounded-full bg-dark-900/50 backdrop-blur-sm mb-8 fade-in-up">
+                        class="inline-flex items-center gap-3 mt-2 px-4 py-2 border border-gold-400/30 rounded-full bg-dark-900/50 backdrop-blur-sm mb-8 fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
                         <span
                             class="text-gold-300 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-medium">Atuação
@@ -276,16 +283,15 @@
                     </div>
 
                     <h1
-                        class="font-display text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-[1.2] mb-6 fade-in-up delay-100 uppercase">
+                        class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.2] mb-6 fade-in-up delay-100 uppercase word-break-safe">
                         Quer desistir da sua cota ou lote e<br />
-                        <span
-                            class="text-gradient italic font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl pr-4">recuperar
+                        <span class="text-gradient italic font-bold text-3xl sm:text-4xl md:text-5xl pr-4">recuperar
                             até 90%</span><br />
-                        <span class="flex text-xl sm:text-2xl md:text-4xl text-white mt-1">do seu dinheiro?</span>
+                        <span class="flex text-lg sm:text-xl md:text-4xl text-white mt-1">do seu dinheiro?</span>
                     </h1>
 
                     <p
-                        class="text-left text-gray-300 text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-2xl mb-10 fade-in-up delay-200 uppercase">
+                        class="text-left text-gray-300 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-2xl mb-10 fade-in-up delay-200 uppercase">
                         Solicite o distrato com a ajuda de um advogado especializado.
                     </p>
 
@@ -352,11 +358,13 @@
                 </h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Card 1 -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-gold-400 mb-6 block">gavel</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-4">O Distrato é um Direito por LEI!</h4>
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover flex flex-col">
+                    <span
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gold-400 mb-4 md:mb-6 block">gavel</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-4 word-break-safe">O Distrato é
+                        um Direito por LEI!</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed flex-grow">
                         Você tem o direito de realizar distrato pela Lei do Distrato (Lei 13.786/18) e o Código de
                         Defesa do Consumidor (Lei 8.078/90), ninguém deve ser compelido a permanecer em um negócio que
@@ -366,9 +374,11 @@
                     </p>
                 </div>
                 <!-- Card 2 -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-gold-400 mb-6 block">balance</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-4">A Jurisprudência está a SEU FAVOR!</h4>
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover flex flex-col">
+                    <span
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gold-400 mb-4 md:mb-6 block">balance</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-4 word-break-safe">A
+                        Jurisprudência está a SEU FAVOR!</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed flex-grow">
                         Em contratos de compra e venda de COTAS parcelados com a própria loteadora, os tribunais tem o
                         entendimento pacificado que os compradores NÃO PODEM SAIR DE MÃOS VAZIAS, portanto cláusulas que
@@ -377,9 +387,11 @@
                     </p>
                 </div>
                 <!-- Card 3 -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover flex flex-col">
-                    <span class="material-symbols-outlined text-4xl text-gold-400 mb-6 block">domain_disabled</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-4">EMPREENDIMENTO IRREGULAR, EMBARGADO ou
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover flex flex-col">
+                    <span
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gold-400 mb-4 md:mb-6 block">domain_disabled</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-4 word-break-safe">EMPREENDIMENTO
+                        IRREGULAR, EMBARGADO ou
                         ATRASADO</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed flex-grow">
                         Se a entrega ultrapassou 180 dias ou se o empreendimento apresentar irregularidades graves, como
@@ -425,7 +437,8 @@
 
                     <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-8 leading-tight">
                         Enfrentando Desafios no <br>
-                        <span class="text-gradient text-3xl md:text-5xl font-normal">Direito Imobiliário</span>
+                        <span class="text-gradient text-2xl sm:text-3xl md:text-5xl font-normal">Direito
+                            Imobiliário</span>
                     </h2>
 
                     <div class="text-justify space-y-6 text-gray-300 font-light leading-relaxed text-lg">
@@ -441,13 +454,14 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-8 mt-12 pt-12 border-t border-white/5">
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-10 sm:mt-12 pt-10 sm:pt-12 border-t border-white/5">
                         <div>
-                            <p class="font-display text-4xl text-gold-400 mb-2">Nacional</p>
+                            <p class="font-display text-2xl sm:text-4xl text-gold-400 mb-2">Nacional</p>
                             <p class="text-xs text-gray-500 uppercase tracking-widest">Cobertura de Atuação</p>
                         </div>
                         <div>
-                            <p class="font-display text-4xl text-gold-400 mb-2">Inovação</p>
+                            <p class="font-display text-2xl sm:text-4xl text-gold-400 mb-2">Inovação</p>
                             <p class="text-xs text-gray-500 uppercase tracking-widest">Teses Jurídicas</p>
                         </div>
                     </div>
@@ -474,20 +488,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">domain</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Distrato de Cota Imobiliária</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">domain</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Distrato de
+                        Cota Imobiliária</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Rescisão contratual
                         estratégica, visando
                         a recuperação máxima dos valores investidos em cotas ou multipropriedades.</p>
                 </div>
 
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">landscape</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Distrato de Lotes</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">landscape</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Distrato de
+                        Lotes</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Cancelamento do contrato de
                         compra e
                         venda com a loteadora, assegurando a recuperação justa das parcelas pagas e protegendo seu
@@ -495,40 +511,44 @@
                 </div>
 
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">gavel</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Ações Judiciais Imobiliárias</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">gavel</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Ações
+                        Judiciais Imobiliárias</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Representação enérgica em
                         litígios
                         complexos, protegendo integralmente seus interesses patrimoniais nos tribunais.</p>
                 </div>
 
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">real_estate_agent</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Alienação Fiduciária</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">real_estate_agent</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Alienação
+                        Fiduciária</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Defesa especializada em
                         contratos de
                         alienação fiduciária, atuando tanto na prevenção quanto no contencioso.</p>
                 </div>
 
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">assignment</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Contratos Imobiliários</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">assignment</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Contratos
+                        Imobiliários</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Elaboração, análise e
                         revisão minuciosa
                         de instrumentos contratuais para assegurar solidez e segurança aos negócios.</p>
                 </div>
 
                 <!-- Area -->
-                <div class="premium-border bg-dark-800 p-8 rounded-sm card-hover cursor-default">
+                <div class="premium-border bg-dark-800 p-5 sm:p-6 md:p-8 rounded-sm card-hover cursor-default">
                     <span
-                        class="material-symbols-outlined text-4xl text-gray-600 icon-gold transition duration-300 mb-6 block">balance</span>
-                    <h4 class="font-display text-xl text-white font-bold mb-3">Leilão Judicial de Imóveis</h4>
+                        class="material-symbols-outlined text-3xl md:text-4xl text-gray-600 icon-gold transition duration-300 mb-4 md:mb-6 block">balance</span>
+                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3 word-break-safe">Leilão
+                        Judicial de Imóveis</h4>
                     <p class="text-justify text-gray-400 text-sm font-light leading-relaxed">Assessoria jurídica
                         completa para
                         arrematantes, garantindo aquisições seguras e mitigações de surpresas processuais.</p>
@@ -536,10 +556,11 @@
 
                 <!-- Area (Full Width modifier for Due Diligence) -->
                 <div
-                    class="md:col-span-2 lg:col-span-3 premium-border bg-[#0a0d11] p-8 md:p-10 rounded-sm card-hover border-gold-400/20 text-center flex flex-col items-center justify-center">
+                    class="md:col-span-2 lg:col-span-3 premium-border bg-[#0a0d11] p-6 md:p-10 rounded-sm card-hover border-gold-400/20 text-center flex flex-col items-center justify-center">
                     <span class="text-gold-400 text-xs tracking-[0.2em] font-medium uppercase mb-3">Due Diligence Urbana
                         & Advocacia Preventiva</span>
-                    <h4 class="font-display text-2xl md:text-3xl text-white font-bold mb-4">Mais Especialidades</h4>
+                    <h4 class="font-display text-xl sm:text-2xl md:text-3xl text-white font-bold mb-4 word-break-safe">
+                        Mais Especialidades</h4>
                     <p class="text-gray-400 text-sm md:text-base font-light mb-6 max-w-3xl">
                         Também atuamos eximiamente com <strong>Usucapião</strong>, <strong>Direito Condominial</strong>,
                         <strong>Direito
@@ -573,8 +594,9 @@
 
             <div class="space-y-6">
                 <!-- FAQ Item 1 -->
-                <div class="premium-border bg-dark-800 p-6 md:p-8 rounded-sm">
-                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3">1. A empresa está cobrando uma
+                <div class="premium-border bg-dark-800 p-5 md:p-8 rounded-sm">
+                    <h4 class="font-display text-base md:text-xl text-white font-bold mb-3 word-break-safe">1. A empresa
+                        está cobrando uma
                         multa muito alta para rescindir meu contrato. Isso é legal?</h4>
                     <p class="text-gray-400 font-light leading-relaxed text-left md:text-justify">Não é permitido que as
                         empresas estipulem multas abusivas no contrato. A legislação protege o consumidor contra essas
@@ -584,8 +606,9 @@
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="premium-border bg-dark-800 p-6 md:p-8 rounded-sm">
-                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3">2. Fui abordado(a) na praia e
+                <div class="premium-border bg-dark-800 p-5 md:p-8 rounded-sm">
+                    <h4 class="font-display text-base md:text-xl text-white font-bold mb-3 word-break-safe">2. Fui
+                        abordado(a) na praia e
                         levado(a) para uma palestra, me pressionaram a fechar. Isso tem como ser anulado?</h4>
                     <p class="text-gray-400 font-light leading-relaxed text-left md:text-justify">Sim. Abordagens
                         agressivas e a pressão para tomar decisões imediatas sem tempo para refletir configuram prática
@@ -595,8 +618,9 @@
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="premium-border bg-dark-800 p-6 md:p-8 rounded-sm">
-                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3">3. Quanto posso recuperar com
+                <div class="premium-border bg-dark-800 p-5 md:p-8 rounded-sm">
+                    <h4 class="font-display text-base md:text-xl text-white font-bold mb-3 word-break-safe">3. Quanto
+                        posso recuperar com
                         o distrato?</h4>
                     <p class="text-gray-400 font-light leading-relaxed text-left md:text-justify">Se a culpa pelo
                         distrato for da empresa, como em casos de atraso na entrega ou descumprimento contratual, é
@@ -606,8 +630,9 @@
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div class="premium-border bg-dark-800 p-6 md:p-8 rounded-sm">
-                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3">4. A empresa não entregou o
+                <div class="premium-border bg-dark-800 p-5 md:p-8 rounded-sm">
+                    <h4 class="font-display text-base md:text-xl text-white font-bold mb-3 word-break-safe">4. A empresa
+                        não entregou o
                         empreendimento na data prometida. Posso rescindir o contrato?</h4>
                     <p class="text-gray-400 font-light leading-relaxed text-left md:text-justify">Sim. O atraso na
                         entrega do empreendimento é um descumprimento contratual que dá ao consumidor o direito de
@@ -616,8 +641,9 @@
                 </div>
 
                 <!-- FAQ Item 5 -->
-                <div class="premium-border bg-dark-800 p-6 md:p-8 rounded-sm">
-                    <h4 class="font-display text-lg md:text-xl text-white font-bold mb-3">5. Quais documentos devo
+                <div class="premium-border bg-dark-800 p-5 md:p-8 rounded-sm">
+                    <h4 class="font-display text-base md:text-xl text-white font-bold mb-3 word-break-safe">5. Quais
+                        documentos devo
                         reunir para iniciar o processo de distrato?</h4>
                     <p class="text-gray-400 font-light leading-relaxed text-left md:text-justify">Reúna o contrato de
                         compra, comprovantes de pagamento, mensagens, e-mails, propagandas relacionadas à oferta e
@@ -642,8 +668,8 @@
 
                 <!-- Contact Info -->
                 <div>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">Nos envie sua</h2>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-gradient italic font-normal mb-8">Dúvida
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-2">Nos envie sua</h2>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-gradient italic font-normal mb-8">Dúvida
                     </h2>
                     <p class="text-gray-400 text-justify leading-relaxed font-light mb-12">
                         O primeiro passo para a resolução do seu desafio imobiliário é uma análise técnica minuciosa.
@@ -683,7 +709,7 @@
                 </div>
 
                 <!-- Form -->
-                <div class="premium-border bg-dark-900 p-8 md:p-10 rounded-sm">
+                <div class="premium-border bg-dark-900 p-6 md:p-10 rounded-sm">
                     <form class="space-y-6">
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2 font-medium"
